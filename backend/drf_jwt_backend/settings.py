@@ -27,6 +27,20 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'authentication.User'
 
+# Database Configuration
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'reactdjango-jwt',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+# SECRET_KEY
+SECRET_KEY = '4yp=3ugge$l*vylwgpkrv2x=)nts3p4f=85shm8@iol7@ong1i'
 
 # Application definition
 
