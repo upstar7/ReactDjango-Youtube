@@ -6,6 +6,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import VideoPage from "./pages/VideoPage/VideoPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -16,7 +17,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
     return (
-        <div>
+        <div className="app">
             <Navbar />
             <Routes>
                 <Route
@@ -24,6 +25,14 @@ function App() {
                     element={
                         <PrivateRoute>
                             <HomePage />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/videos/:id"
+                    element={
+                        <PrivateRoute>
+                            <VideoPage />
                         </PrivateRoute>
                     }
                 />
