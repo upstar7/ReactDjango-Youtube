@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import youtube from "../apis/youtube";
+// import dotenv from "dotenv";
+// dotenv.config();
 
 const useVideos = (defaultSearchTerm) => {
     const [videos, setVideos] = useState([]);
@@ -16,7 +18,8 @@ const useVideos = (defaultSearchTerm) => {
                 part: "snippet",
                 maxResults: 10,
                 type: "video",
-                key: "AIzaSyACKB13e3Yf9rmhaTYJvuTq043GJMPYxEE",
+                key: "AIzaSyDJ4HRCGqc4E3cBmT4VA3MlvQlqOMyazds",
+                // key: process.env.REACT_APP_YOUTUBE_API_KEY,
             },
         });
 

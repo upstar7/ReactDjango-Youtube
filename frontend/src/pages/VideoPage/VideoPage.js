@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import RelatedVideos from "./components/RelatedVideos/RelatedVideos";
 import useVideos from "../../hooks/useVideos";
+import CommentsSection from "./components/Comments/CommentsSection";
 
 const VideoPage = () => {
     const { state } = useLocation();
@@ -14,7 +15,7 @@ const VideoPage = () => {
     }, [state, navigate]);
 
     const videos = useVideos(state?.video?.id);
-    console.log(videos);
+    // console.log(state.video.id);
     const handleBackClick = () => {
         navigate("/", { state: { searchTerm: state?.searchTerm } });
     };
@@ -32,6 +33,7 @@ const VideoPage = () => {
             <Row>
                 <Col lg={8} md={6}>
                     <VideoPlayer video={state?.video} />
+                    <CommentsSection videoId={state?.video?.id?.videoId} />
                 </Col>
                 <Col lg={4} md={6}>
                     <RelatedVideos videos={videos} />

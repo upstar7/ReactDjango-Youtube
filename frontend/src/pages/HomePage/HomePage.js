@@ -12,7 +12,9 @@ const HomePage = () => {
     //TODO: Add an AddCars Page to add a car for a logged in user's garage
     const { state } = useLocation();
     const [user, token] = useAuth();
-    const [searchTerm, setSearchTerm] = useState(state?.searchTerm || "");
+    const [searchTerm, setSearchTerm] = useState(
+        state?.searchTerm || "reactjs"
+    );
     const videos = useVideos(searchTerm);
     // const [selectedVideo, setSelectedVideo] = useState(null);
     // const [cars, setCars] = useState([]);

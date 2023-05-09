@@ -1,0 +1,14 @@
+/* App style start */
+.comment-form-default {
+    margin-top: 20px;
+    /* width: 70%; */
+    /* min-width: 500px; */
+    /* margin: auto; */
+}
+/* App style end */
+
+@media screen and (max-width: 950px) {
+    .comment-section {
+        /* width: 85%; */
+    }
+}
