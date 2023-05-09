@@ -59,8 +59,15 @@ class CommentDetail(generics.GenericAPIView):
         if comment == None:
             return Response({"status": "fail", "message": f"comment with Id: {c_id} not found"}, status=404)
 
+        data = request.data
+        print('data', comment)
+        if 'likes' in data:
+            data['likes'] = comment.likes + 1
+        if 'dislikes' in data:
+            data['dislikes'] = comment.dislikes + 1
+
         serializer = self.serializer_class(
-            comment, data=request.data, partial=True)
+            comment, data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response({"status": "success", "comment": serializer.data})
