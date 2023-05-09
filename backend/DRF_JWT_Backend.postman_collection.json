@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "d4409d57-7119-4339-bfae-1f3a18bc6341",
-		"name": "DRF_JWT_Backend",
+		"_postman_id": "14cc1146-5668-4e74-b7e3-636142722cf9",
+		"name": "youtube-final",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -9,61 +9,29 @@
 			"name": "Authentication",
 			"item": [
 				{
-					"name": "Register_User",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"dantheman\",\r\n    \"password\": \"password1@\",\r\n    \"email\": \"dan@devcodecamp.com\",\r\n    \"first_name\": \"Daniel\",\r\n    \"last_name\": \"Tulpa\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/auth/register/",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"auth",
-								"register",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Login_User",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"dantheman\",\r\n    \"password\": \"password1@\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwer!234",
+									"type": "text"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/auth/login/",
-							"protocol": "http",
+							"raw": "localhost:8000/api/auth/login/",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"localhost"
 							],
 							"port": "8000",
 							"path": [
@@ -77,27 +45,77 @@
 					"response": []
 				},
 				{
+					"name": "Register_User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "user@example.com",
+									"type": "default"
+								},
+								{
+									"key": "first_name",
+									"value": "John",
+									"type": "default"
+								},
+								{
+									"key": "last_name",
+									"value": "Doe",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "qwer!234",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Refresh_Access",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"refresh\": \"PASTE REFRESH TOKEN FROM LOGIN HERE\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "refresh",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY4NTMzOTk2OCwiaWF0IjoxNjgzNjExOTY4LCJqdGkiOiI1MWZlMDNmNmI3MzY0YWFjYjBlODgwNGIzZGM1ODM0ZSIsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJmaXJzdF9uYW1lIjoiIn0.fo944KBz55M5SGHT2TkOv91Pm0SgMWiL8AQHzPNkFeg",
+									"type": "default"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/auth/login/refresh/",
+							"raw": "http://localhost:8000/api/auth/login/refresh/",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"localhost"
 							],
 							"port": "8000",
 							"path": [
@@ -114,108 +132,183 @@
 			]
 		},
 		{
-			"name": "Cars",
+			"name": "Comments",
 			"item": [
 				{
-					"name": "GET all cars (unprotected)",
+					"name": "Get_Comments",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/cars/all/",
+							"raw": "http://localhost:8000/api/comments/video_id/1",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"localhost"
 							],
 							"port": "8000",
 							"path": [
 								"api",
-								"cars",
-								"all",
-								""
+								"comments",
+								"video_id",
+								"1"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "GET cars for user (protected)",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU2ODM5LCJpYXQiOjE2NDcyOTI4MzksImp0aSI6ImJjYzJhZTUzOTRlYzQ3OThiNjI0YTcwYTYzYjcxOThmIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJqanZlZ2EiLCJmaXJzdF9uYW1lIjoiIn0.l9ATW5CpWF2TGniqVgU1I-a8LkuqgLQ4ok3tJh6asAA",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/cars/",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"cars",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "POST new car for user (protected)",
+					"name": "Post_Comment",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU3MjczLCJpYXQiOjE2NDcyOTMyNzMsImp0aSI6IjIyMDQ4YTg2NzEzMTQyMmZhZjJmNDNmYmI2MTExZDg2IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.DeTe47E7-9eCr7xKE22m3CvFMDj0Sxye5A6ndwJ024M",
-								"type": "text"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NDc2NDg0LCJpYXQiOjE2ODM2MTE5NjgsImp0aSI6IjFkMWU2YWI5OGQ3MDRiNWFhMTgwMzVmZjkxNGViYjBjIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0X25hbWUiOiIifQ.QpWQrvP1HlAe4efA3XexVUFEX5t0NH3dEncreJH8UZs",
+								"type": "default"
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"make\": \"Ford\",\n    \"model\": \"F150\",\n    \"year\": 1999\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "video_id",
+									"value": "video1",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "comment for video1 from admin",
+									"type": "text"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/cars/",
+							"raw": "http://localhost:8000/api/comments/",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"localhost"
 							],
 							"port": "8000",
 							"path": [
 								"api",
-								"cars",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Comment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NDc2NDg0LCJpYXQiOjE2ODM2MTE5NjgsImp0aSI6IjFkMWU2YWI5OGQ3MDRiNWFhMTgwMzVmZjkxNGViYjBjIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0X25hbWUiOiIifQ.QpWQrvP1HlAe4efA3XexVUFEX5t0NH3dEncreJH8UZs",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "video_id",
+									"value": "video1",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Updated Comment from admin for video1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/comments/comment_id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"comment_id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Replies",
+			"item": [
+				{
+					"name": "Get_Replies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NDc2NDg0LCJpYXQiOjE2ODM2MTE5NjgsImp0aSI6IjFkMWU2YWI5OGQ3MDRiNWFhMTgwMzVmZjkxNGViYjBjIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0X25hbWUiOiIifQ.QpWQrvP1HlAe4efA3XexVUFEX5t0NH3dEncreJH8UZs",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/replies/comment_id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"replies",
+								"comment_id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reply_Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NDc2NDg0LCJpYXQiOjE2ODM2MTE5NjgsImp0aSI6IjFkMWU2YWI5OGQ3MDRiNWFhMTgwMzVmZjkxNGViYjBjIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0X25hbWUiOiIifQ.QpWQrvP1HlAe4efA3XexVUFEX5t0NH3dEncreJH8UZs",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "this is reply to comment 1 from admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/replies/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"replies",
 								""
 							]
 						}

@@ -31,7 +31,7 @@ AUTH_USER_MODEL = 'authentication.User'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'reactdjango-jwt',
+        'NAME': 'youtube',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
-    'cars.apps.CarsConfig'  # This app is for example use only
+    'comments.apps.CommentsConfig',
+    'replies.apps.RepliesConfig'
 ]
 
 MIDDLEWARE = [
