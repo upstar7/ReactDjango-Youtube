@@ -1,6 +1,6 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
+// import useAuth from "../../hooks/useAuth";
 import useVideos from "../../hooks/useVideos";
 import SearchBar from "./components/SearchBar/SearchBar";
 import VideoList from "./components/VideoList/VideoList";
@@ -11,7 +11,7 @@ const HomePage = () => {
     // The "token" value is the JWT token that you will send in the header of any request requiring authentication
     //TODO: Add an AddCars Page to add a car for a logged in user's garage
     const { state } = useLocation();
-    const [user, token] = useAuth();
+    // const [user, token] = useAuth();
     const [searchTerm, setSearchTerm] = useState(
         state?.searchTerm || "reactjs"
     );
