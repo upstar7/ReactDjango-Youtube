@@ -4,7 +4,9 @@ const VideoPlayer = ({ video }) => {
     if (!video) {
         return <div>Loading Videos...</div>;
     }
-
+    const formatDescription = (description) => {
+        return description.substring(0, 400) + "...";
+    };
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
     // console.log(videoSrc);
     return (
@@ -14,7 +16,7 @@ const VideoPlayer = ({ video }) => {
             </div>
             <div className="video-description">
                 <h5>{video.snippet.title}</h5>
-                <p>{video.snippet.description}</p>
+                <p>{formatDescription(video.snippet.description)}</p>
             </div>
         </div>
     );

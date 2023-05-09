@@ -14,9 +14,9 @@ const useVideos = (defaultSearchTerm) => {
                 q: term?.videoId ? null : term,
                 relatedToVideoId: term?.videoId ? term?.videoId : null,
                 part: "snippet",
-                maxResults: 20,
+                maxResults: 10,
                 type: "video",
-                key: "AIzaSyCjRtBSVeLwGsmzsGOiPQj95PHeuTetuIE",
+                key: "AIzaSyACKB13e3Yf9rmhaTYJvuTq043GJMPYxEE",
             },
         });
 

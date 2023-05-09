@@ -1,7 +1,8 @@
 .video-description {
     background: white;
     padding: 0.875rem;
-    margin: 1rem 0;
+    margin-bottom: 5rem;
+    margin-top: 1rem;
     border: 1px solid rgba(34, 36, 38, 0.15);
     border-radius: 0.28125rem;
     box-shadow: 0 1px 2px 0 rgb(34 36 38 / 25%);

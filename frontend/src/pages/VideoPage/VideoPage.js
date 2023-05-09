@@ -14,7 +14,7 @@ const VideoPage = () => {
     }, [state, navigate]);
 
     const videos = useVideos(state?.video?.id);
-
+    console.log(videos);
     const handleBackClick = () => {
         navigate("/", { state: { searchTerm: state?.searchTerm } });
     };
@@ -34,7 +34,7 @@ const VideoPage = () => {
                     <VideoPlayer video={state?.video} />
                 </Col>
                 <Col lg={4} md={6}>
-                    <RelatedVideos />
+                    <RelatedVideos videos={videos} />
                 </Col>
             </Row>
         </Container>

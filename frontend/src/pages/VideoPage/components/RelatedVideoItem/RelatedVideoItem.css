@@ -1,0 +1,22 @@
+.related-video:hover {
+    background-color: aquamarine;
+    border-radius: 10px;
+    /* padding-top: 8px; */
+    animation-name: example;
+    animation-duration: 0.3s;
+    opacity: 0.8;
+}
+
+.related-video img {
+    border-radius: 15%;
+    padding-top: 8px;
+}
+
+@keyframes example {
+    from {
+        background-color: #e4f8ff;
+    }
+    to {
+        background-color: aquamarine;
+    }
+}

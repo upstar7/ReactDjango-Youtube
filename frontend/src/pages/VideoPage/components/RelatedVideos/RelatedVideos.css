@@ -1,0 +1,11 @@
+.relatedVideo-container {
+    margin-top: -70px;
+}
+.relatedVideo-container h3 {
+    padding: 14px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: blue;
+}
+.horizontal-line {
+    border: 1.5px solid blue;
+}

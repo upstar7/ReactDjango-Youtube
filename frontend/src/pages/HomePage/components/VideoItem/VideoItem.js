@@ -5,7 +5,7 @@ import "./VideoItem.css";
 const VideoItem = ({ video, searchTerm }) => {
     const navigate = useNavigate();
 
-    const formatDescription = (description) => {
+    const formatTitle = (description) => {
         return description.substring(0, 40) + "...";
     };
     const handleClick = () => {
@@ -21,7 +21,7 @@ const VideoItem = ({ video, searchTerm }) => {
                 alt={video.snippet.title}
             />
             <div className="video-title mx-auto">
-                <h5>{formatDescription(video.snippet.title)}</h5>
+                <h5>{formatTitle(video.snippet.title)}</h5>
             </div>
         </div>
     );
