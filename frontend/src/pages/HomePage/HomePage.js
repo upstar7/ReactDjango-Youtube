@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 const HomePage = () => {
     const { state } = useLocation();
     const [searchTerm, setSearchTerm] = useState(
-        state?.searchTerm || "reactjs"
+        state?.searchTerm || "React/Django JWT"
     );
     const videos = useVideos(searchTerm);
 

@@ -23,7 +23,7 @@ const LoginPage = () => {
         if (isServerError) {
             reset();
         }
-    }, [isServerError, reset]);
+    }, [isServerError]);
 
     const handleKeyPress = (e) => {
         if (e.key === "Enter") {
