@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CommentForm from "./CommentForm/CommentForm";
 import CommentGroup from "./CommentGroup/CommentGroup";
-import Spinner from "../../../../components/Spinner/Spinner";
 import useAuth from "../../../../hooks/useAuth";
 
 import "./CommentsSection.css";
 
 export default function CommentsSection({ videoId }) {
-    // const url = `http://localhost:8000/api/comments`;
     const [comments, setComments] = useState([]);
     const [user, token] = useAuth();
 
@@ -49,8 +47,6 @@ export default function CommentsSection({ videoId }) {
                 return;
             }
 
-            console.log("newComments", newComments);
-            // await axios.post(url, newComments);
             await axios.post(
                 "http://127.0.0.1:8000/api/comments/",
                 {
@@ -73,9 +69,7 @@ export default function CommentsSection({ videoId }) {
         return (
             <CommentGroup
                 commentsLength={comments.length}
-                // createdAt={item.createdAt}
                 username={item.user.username}
-                // image={item.user.image.png}
                 text={item.text}
                 likes={item.likes}
                 dislikes={item.dislikes}
@@ -83,8 +77,6 @@ export default function CommentsSection({ videoId }) {
                 key={item.id}
                 id={item.id}
                 replies={item.replies}
-                // handelDeleteComment={handelDeleteComment}
-                // isReplayFor={item.isReplayFor}
                 updateCommentsHandler={updateCommentsHandler}
             />
         );
@@ -93,7 +85,6 @@ export default function CommentsSection({ videoId }) {
 
     return (
         <div className="comment-section">
-            {/* {comments.length <= 0 ? <Spinner /> : ""} */}
             {comments_in_screen}
             <CommentForm
                 updateCommentsHandler={updateCommentsHandler}

@@ -13,7 +13,7 @@ const SearchBar = ({ onFormSubmit, searchTerm }) => {
 
     return (
         <Form onSubmit={handleSubmit} className="container">
-            <div className="d-flex align-items-center mb-5 mt-3 w-50 mx-auto">
+            <div className="d-flex align-items-center mb-5 mt-3 w-75 mx-auto">
                 <FormControl
                     type="text"
                     placeholder="Search"

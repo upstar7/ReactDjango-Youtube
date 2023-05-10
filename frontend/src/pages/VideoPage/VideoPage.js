@@ -15,7 +15,6 @@ const VideoPage = () => {
     }, [state, navigate]);
 
     const videos = useVideos(state?.video?.id);
-    // console.log(state.video.id);
     const handleBackClick = () => {
         navigate("/", { state: { searchTerm: state?.searchTerm } });
     };

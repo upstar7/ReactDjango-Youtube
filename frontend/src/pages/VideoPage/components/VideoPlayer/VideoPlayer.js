@@ -8,7 +8,6 @@ const VideoPlayer = ({ video }) => {
         return description.substring(0, 400) + "...";
     };
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
-    // console.log(videoSrc);
     return (
         <div>
             <div className="video-player">

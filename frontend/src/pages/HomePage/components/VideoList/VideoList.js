@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import VideoItem from "../VideoItem/VideoItem";
+import Spinner from "../../../../components/Spinner/Spinner";
 
 const VideoList = ({ videos, searchTerm }) => {
     const renderedList = videos?.map((video) => {
@@ -13,6 +14,7 @@ const VideoList = ({ videos, searchTerm }) => {
 
     return (
         <Container>
+            {!renderedList.length && <Spinner />}
             <Row className="justify-content-center">{renderedList}</Row>
         </Container>
     );

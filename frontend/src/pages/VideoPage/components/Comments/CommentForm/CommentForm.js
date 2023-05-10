@@ -10,9 +10,6 @@ export default function CommentForm(props) {
     }
     const commentData = () => {
         const newComment = {
-            // img: "/assets/images/avatars/image-juliusomo.png",
-            isYou: true,
-            score: 0,
             content: formData,
         };
         setFormData("");
@@ -22,12 +19,6 @@ export default function CommentForm(props) {
 
     return (
         <div className="comment-form" style={props.style}>
-            {/* <div className="form--img">
-                <img
-                    src="/assets/images/avatars/image-juliusomo.png"
-                    alt="avatar"
-                />
-            </div> */}
             <div className="comment-form--textarea">
                 <textarea
                     value={formData}
@@ -47,9 +38,9 @@ export default function CommentForm(props) {
                         props.updateCommentsHandler(commentData());
                     }
                     // eslint-disable-next-line no-lone-blocks
-                    {
-                        props.displayCommentForm && props.displayCommentForm();
-                    }
+                    // {
+                    props.displayCommentForm && props.displayCommentForm();
+                    // }
                 }}
             >
                 SEND

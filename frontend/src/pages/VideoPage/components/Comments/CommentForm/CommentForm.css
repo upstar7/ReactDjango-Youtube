@@ -20,6 +20,8 @@
     background-color: var(--White);
     border-radius: 5px;
     flex-direction: column;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    box-shadow: 0 1px 2px 0 rgb(34 36 38 / 25%);
 }
 
 .comment-form:last-child {
@@ -27,9 +29,6 @@
     margin-bottom: 5em;
 }
 
-/* .form--img img {
-    width: 35px;
-} */
 .comment-form--textarea {
     width: 100%;
 }
@@ -55,11 +54,6 @@
 @media screen and (max-width: 555px) {
     .comment-form,
     .comment {
-        /* width: 90% !important; */
-        margin-left: 0 !important ;
         padding: 10px !important;
-    }
-    .comment--count {
-        width: 30px !important;
     }
 }

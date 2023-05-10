@@ -39,23 +39,17 @@ export default function GroupComment(props) {
         };
 
         getData();
-    }, [props.replies, props.id]);
+    }, [props.replies, props.id, token]);
 
     return (
         <>
-            {/* {props.isReplayFor.length <= 0 && ( */}
             <Comment
-                // createdAt={props.createdAt}
                 username={props.username}
-                // image={props.image}
                 text={props.text}
                 likes={props.likes}
                 dislikes={props.dislikes}
-                // score={props.score}
                 isYou={props.isYou}
-                // handelDeleteComment={props.handelDeleteComment}
                 id={props.id}
-                isReplyingTo={props.isReplyingTo}
                 updateCommentsHandler={props.updateCommentsHandler}
             />
             {/* )} */}
@@ -64,19 +58,11 @@ export default function GroupComment(props) {
                     return (
                         <Comment
                             isReplies={true}
-                            // createdAt={item.data.data.createdAt}
                             username={item.user.username}
-                            // image={props.image}
                             text={item.text}
-                            // likes={props.likes}
-                            // dislikes={props.dislikes}
-                            // score={props.score}
                             isYou={item.user.id === user.id}
-                            // handelDeleteComment={props.handelDeleteComment}
                             id={item}
                             key={item.id}
-                            // isReplyingTo={props.isReplyingTo}
-                            // updateCommentsHandler={props.updateCommentsHandler}
                         />
                     );
                 })}

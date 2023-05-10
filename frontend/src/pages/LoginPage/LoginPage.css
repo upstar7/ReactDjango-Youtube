@@ -1,3 +1,9 @@
 .error {
-  color: red;
+    color: red;
+}
+.register {
+    font-family: emoji;
+    font-weight: bold;
+    font-size: 24px;
+    color: blue;
 }
