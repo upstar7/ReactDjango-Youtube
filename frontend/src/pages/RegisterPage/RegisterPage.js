@@ -22,11 +22,6 @@ const RegisterPage = () => {
         defaultValues,
         registerUser
     );
-    const handleKeyPress = (e) => {
-        if (e.key === "Enter") {
-            handleSubmit(e);
-        }
-    };
     return (
         <div className="container">
             <Form onSubmit={handleSubmit}>
@@ -83,7 +78,6 @@ const RegisterPage = () => {
                         value={formData.password}
                         onChange={handleInputChange}
                         placeholder="Password"
-                        onKeyUp={handleKeyPress}
                     />
                 </FormGroup>
 

@@ -25,11 +25,6 @@ const LoginPage = () => {
         }
     }, [isServerError]);
 
-    const handleKeyPress = (e) => {
-        if (e.key === "Enter") {
-            handleSubmit(e);
-        }
-    };
     return (
         <div className="container">
             <Form onSubmit={handleSubmit}>
@@ -53,7 +48,6 @@ const LoginPage = () => {
                         value={formData.password}
                         onChange={handleInputChange}
                         placeholder="Enter your password"
-                        onKeyUp={handleKeyPress}
                     />
                 </FormGroup>
                 {isServerError ? (
